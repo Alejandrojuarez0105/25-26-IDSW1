@@ -1,0 +1,10 @@
+@startuml
+[*] --> DocumentoCreado
+
+DocumentoCreado --> DocumentoAbierto : Abrir documento
+DocumentoAbierto --> EditandoDocumento : Escribir texto
+EditandoDocumento --> DocumentoGuardado : Guardar cambios
+DocumentoGuardado --> DocumentoCerrado : Cerrar documento
+DocumentoCerrado --> [*]
+
+@enduml

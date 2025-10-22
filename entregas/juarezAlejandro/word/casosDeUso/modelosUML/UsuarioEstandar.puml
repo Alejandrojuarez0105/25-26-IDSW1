@@ -1,0 +1,47 @@
+@startuml CdU_UsuarioEstandar
+left to right direction
+
+actor "Usuario Estándar" as Usuario
+
+package "Gestión de Documentos" {
+    usecase "Crear documento" as CrearDocumento
+    usecase "Abrir documento" as AbrirDocumento
+    usecase "Guardar documento" as GuardarDocumento
+    usecase "Imprimir documento" as ImprimirDocumento
+    usecase "Cerrar documento" as CerrarDocumento
+}
+
+package "Edición y Formato" {
+    usecase "Escribir texto" as EscribirTexto
+    usecase "Aplicar formato" as AplicarFormato
+    usecase "Insertar imágenes" as InsertarImagenes
+    usecase "Insertar tablas" as InsertarTablas
+    usecase "Insertar listas" as InsertarListas
+    usecase "Insertar encabezado/pie de página" as InsertarEncabezado
+}
+
+package "Revisión" {
+    usecase "Corregir ortografía y gramática" as RevisarOrtografia
+}
+
+package "Exportar y Compartir" {
+    usecase "Exportar a PDF" as ExportarPDF
+    usecase "Compartir documento" as CompartirDocumento
+}
+
+Usuario --> CrearDocumento
+Usuario --> AbrirDocumento
+Usuario --> GuardarDocumento
+Usuario --> ImprimirDocumento
+Usuario --> CerrarDocumento
+Usuario --> EscribirTexto
+Usuario --> AplicarFormato
+Usuario --> InsertarImagenes
+Usuario --> InsertarTablas
+Usuario --> InsertarListas
+Usuario --> InsertarEncabezado
+Usuario --> RevisarOrtografia
+Usuario --> ExportarPDF
+Usuario --> CompartirDocumento
+
+@enduml

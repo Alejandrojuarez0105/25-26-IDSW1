@@ -1,0 +1,27 @@
+@startuml
+hide circle
+hide empty members
+
+class Usuario {}
+class Documento {}
+class Seccion {}
+class Tabla {}
+class Imagen {}
+class Lista {}
+class Comentario {}
+class Macro {}
+class Configuracion {}
+
+Usuario -- Documento : crea
+Usuario -- Documento : abre
+Usuario -- Documento : guarda
+Documento -- Seccion : contiene
+Documento -- Tabla : contiene
+Documento -- Imagen : contiene
+Documento -- Lista : contiene
+Documento -- Comentario : contiene
+Documento -- Macro : ejecuta
+Usuario -- Configuracion : gestiona
+Documento -- Configuracion : aplica
+
+@enduml

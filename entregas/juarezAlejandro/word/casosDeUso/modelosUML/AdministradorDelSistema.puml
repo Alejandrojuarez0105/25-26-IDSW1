@@ -1,0 +1,20 @@
+@startuml CdU_AdminWord
+left to right direction
+
+actor "Administrador del Sistema" as Admin
+
+package "Gestión del Entorno" {
+    usecase "Configurar opciones de Word" as ConfigurarOpciones
+    usecase "Gestionar plantillas" as GestionarPlantillas
+    usecase "Administrar complementos" as AdministrarComplementos
+    usecase "Gestionar permisos de usuario" as GestionarPermisos
+    usecase "Actualizar software" as ActualizarWord
+}
+
+Admin --> ConfigurarOpciones
+Admin --> GestionarPlantillas
+Admin --> AdministrarComplementos
+Admin --> GestionarPermisos
+Admin --> ActualizarWord
+
+@enduml

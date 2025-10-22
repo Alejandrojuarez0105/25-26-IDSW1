@@ -1,0 +1,10 @@
+@startuml
+[*] --> ConfiguracionInicial
+
+ConfiguracionInicial --> GestionandoOpciones : Configurar opciones de Word
+GestionandoOpciones --> GestionandoPlantillas : Administrar plantillas y complementos
+GestionandoPlantillas --> GestionandoUsuarios : Administrar permisos de usuario
+GestionandoUsuarios --> SistemaActualizado : Actualizar software
+SistemaActualizado --> [*]
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+[*] --> DocumentoAbierto
+
+DocumentoAbierto --> InsertandoElementos : Insertar tablas, imágenes, listas
+InsertandoElementos --> RevisandoDocumento : Rastrear cambios y agregar comentarios
+RevisandoDocumento --> AutomatizandoTareas : Ejecutar macros o combinar correspondencia
+AutomatizandoTareas --> DocumentoGuardado : Guardar cambios
+DocumentoGuardado --> DocumentoCerrado : Cerrar documento
+DocumentoCerrado --> [*]
+
+@enduml

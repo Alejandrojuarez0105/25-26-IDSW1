@@ -1,0 +1,38 @@
+@startuml CdU_UsuarioAvanzado
+left to right direction
+
+actor "Usuario Avanzado" as UsuarioAvanzado
+
+package "Colaboración y Revisión" {
+    usecase "Agregar comentarios" as AgregarComentarios
+    usecase "Rastrear cambios" as RastrearCambios
+    usecase "Aceptar o rechazar cambios" as GestionarCambios
+    usecase "Proteger documento" as ProtegerDocumento
+}
+
+package "Elementos Avanzados" {
+    usecase "Insertar citas y bibliografía" as InsertarCitas
+    usecase "Generar tabla de contenido" as GenerarTOC
+    usecase "Insertar notas al pie" as InsertarNotas
+    usecase "Usar estilos personalizados" as Estilos
+}
+
+package "Automatización" {
+    usecase "Crear macros" as CrearMacros
+    usecase "Ejecutar macros" as EjecutarMacros
+    usecase "Combinar correspondencia" as MailMerge
+}
+
+UsuarioAvanzado --> AgregarComentarios
+UsuarioAvanzado --> RastrearCambios
+UsuarioAvanzado --> GestionarCambios
+UsuarioAvanzado --> ProtegerDocumento
+UsuarioAvanzado --> InsertarCitas
+UsuarioAvanzado --> GenerarTOC
+UsuarioAvanzado --> InsertarNotas
+UsuarioAvanzado --> Estilos
+UsuarioAvanzado --> CrearMacros
+UsuarioAvanzado --> EjecutarMacros
+UsuarioAvanzado --> MailMerge
+
+@enduml

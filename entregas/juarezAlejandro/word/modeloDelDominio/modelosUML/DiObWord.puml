@@ -1,0 +1,47 @@
+@startuml
+hide circle
+hide empty members
+
+class Usuario {
+    nombre = "Alejandro"
+    rol = "Estándar"
+}
+
+class Documento {
+    titulo = "IdSw"
+    fechaCreacion = "20-10-2025"
+    formato = "DOCX"
+}
+
+class Seccion {
+    titulo = "Introducción"
+    numParrafos = 3
+}
+
+class Tabla {
+    filas = 5
+    columnas = 3
+}
+
+class Imagen {
+    descripcion = "Ejemplos de Modelos Del Dominio"
+}
+
+class Lista {
+    tipo = "Notas"
+    elementos = 4
+}
+
+class Comentario {
+    autor = "Manuel Masias"
+    texto = "Jueguen Hollow Knight"
+}
+
+Usuario -- Documento : crea
+Documento -- Seccion : contiene
+Documento -- Tabla : contiene
+Documento -- Imagen : contiene
+Documento -- Lista : contiene
+Documento -- Comentario : contiene
+
+@enduml
