@@ -1,0 +1,66 @@
+@startuml
+object Usuario {
+  nombre = "Alejandro"
+}
+
+object Rol {
+  nombre = "Administrador"
+}
+
+object Permiso {
+  nombre = "GestionarBD"
+}
+
+object BaseDeDatos {
+  nombre = "SistemaVentas"
+}
+
+object Esquema {
+  nombre = "Public"
+}
+
+object Vista {
+  nombre = "VistaClientes"
+}
+
+object Tabla {
+  nombre = "Clientes"
+}
+
+object Indice {
+  nombre = "idx_clientes_id"
+}
+
+object Campo {
+  nombre = "id_cliente"
+  tipo = "INT"
+}
+
+object Constraint {
+  tipo = "NOT NULL"
+}
+
+object Key {
+  tipo = "PRIMARY"
+  columnas = "id_cliente"
+}
+
+object Tipo {
+  nombre = "int"
+}
+
+Usuario --> Rol
+BaseDeDatos -right-> Esquema
+Rol --> Permiso
+Esquema --> Vista
+Permiso --> Vista
+Vista --> Tabla
+Tabla --> Indice
+Indice -right-> Campo
+Tabla --> Campo
+Campo -right-> Constraint
+Campo --> Key
+Campo --> Tipo
+
+hide empty members
+@enduml

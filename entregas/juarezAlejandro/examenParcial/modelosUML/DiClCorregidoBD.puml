@@ -1,0 +1,29 @@
+@startuml
+class Usuario
+class Rol
+class Permiso
+class BaseDeDatos
+class Esquema
+class Vista
+class Tabla
+class Indice
+class Campo
+class Constraints
+class Key
+
+Usuario *-- Rol
+BaseDeDatos *-right- Esquema
+Rol o-- Permiso
+Esquema *-- Vista
+Permiso *-- Vista
+Vista <|-- Tabla
+Tabla *-- Indice
+Indice *-right- Campo
+Campo o-right- Constraints
+Tabla *-- Campo
+Campo o-- Key
+Campo -[hidden]down-> TipoDeDato
+Campo *-- TipoDeDato
+
+hide empty members
+@enduml
