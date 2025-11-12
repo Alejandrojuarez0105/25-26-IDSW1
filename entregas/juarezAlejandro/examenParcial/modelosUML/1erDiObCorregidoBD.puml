@@ -1,66 +1,66 @@
 @startuml
 object Usuario {
-  nombre = "Alejandro"
+  nombre = "Manuel Masías"
 }
 
 object Rol {
-  nombre = "Administrador"
+  nombre = "Profesor"
 }
 
 object Permiso {
-  nombre = "GestionarBD"
+  nombre = "Colocar notas"
 }
 
 object BaseDeDatos {
-  nombre = "SistemaVentas"
+  nombre = "Universidad Europea del Atlántico"
 }
 
 object Esquema {
-  nombre = "Public"
+  nombre = "Facultad de Ingeniería"
 }
 
 object Vista {
-  nombre = "VistaClientes"
+  nombre = "Ingeniería de Software I"
 }
 
 object Tabla {
-  nombre = "Clientes"
+  nombre = "Grupo 3er año"
 }
 
 object Indice {
-  nombre = "idx_clientes_id"
+  nombre = "Alejandro Juárez"
 }
 
 object Campo {
-  nombre = "id_cliente"
-  tipo = "INT"
+  nombre = "Examen Final"
+  tipo = "Teórico"
 }
 
 object Constraint {
-  tipo = "NOT NULL"
+  descripcion = "Comprensión de conceptos"
 }
 
 object Key {
-  tipo = "PRIMARY"
-  columnas = "id_cliente"
+  valor = "9.0"
+  escala = "0-10"
 }
 
 object Tipo {
-  nombre = "int"
+  nombre = "Examen"
 }
 
-Usuario --> Rol
-BaseDeDatos -right-> Esquema
-Rol --> Permiso
-Esquema --> Vista
-Permiso --> Vista
-Vista --> Tabla
-Tabla --> Indice
-Indice -right-> Campo
-Tabla --> Campo
-Campo -right-> Constraint
-Campo --> Key
-Campo --> Tipo
+Usuario -- Rol
+BaseDeDatos -right- Esquema
+Rol -- Permiso
+Esquema -- Vista
+Permiso -- Vista
+Vista -- Tabla
+Tabla -- Indice
+Indice -right- Campo
+Tabla -- Campo
+Campo -right- Constraint
+Campo -- Key
+Campo -- Tipo
 
 hide empty members
 @enduml

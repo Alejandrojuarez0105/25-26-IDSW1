@@ -1,0 +1,99 @@
+@startuml 
+object Usuario {
+  nombre = "Carlos Manuel"
+  dni = "12345678X"
+  telefono = "+34 123 456 789"
+  correo = "carlos.manuel@rentacar.com"
+}
+
+object Rol {
+  nombre = "Empleado"
+  departamento = "Atención al Cliente"
+  turno = "Mañana"
+}
+
+object Permiso {
+  nombre = "GestionarReservas"
+  descripcion = "Puede crear, modificar y cancelar reservas de vehículos"
+  nivel = "Medio"
+}
+
+object BaseDeDatos {
+  nombre = "RentACar Santander"
+  direccion = "Av. de los Castros, 123 - Santander"
+  fundacion = "2010"
+  numeroSucursales = 5
+}
+
+object Esquema {
+  nombre = "Sucursal Centro"
+  codigo = "SUC001"
+  gerente = "Laura Gómez"
+  capacidadVehiculos = 120
+}
+
+object Vista {
+  nombre = "Listado de Vehículos"
+  filtros = "Tipo, Marca, Precio, Disponibilidad"
+  actualizado = "2025-11-12"
+}
+
+object Tabla {
+  nombre = "Reservas"
+  cantidadRegistros = 253
+  ultimaActualizacion = "2025-11-10"
+}
+
+object Indice {
+  nombre = "Cliente: Alejandro Juárez"
+  idCliente = "CLT087"
+  membresia = "Premium"
+  telefono = "+34 987 654 321"
+}
+
+object Campo {
+  nombre = "Vehículo"
+  tipo = "SUV"
+  marca = "Toyota"
+  modelo = "RAV4 Hybrid"
+  matricula = "1234-ABC"
+  año = 2023
+  precioDia = "65.00 €"
+}
+
+object Constraint {
+  descripcion = "Debe tener seguro vigente y revisión técnica actualizada"
+  obligatorio = true
+  fechaVerificacion = "2025-10-01"
+}
+
+object Key {
+  valor = "ID_RESERVA_1023"
+  estado = "Confirmada"
+  fechaInicio = "2025-11-14"
+  fechaFin = "2025-11-17"
+  total = "195.00 €"
+}
+
+object Tipo {
+  nombre = "Reserva"
+  metodoPago = "Tarjeta de crédito"
+  fechaCreacion = "2025-11-12"
+  canal = "Online"
+}
+
+Usuario -- Rol
+BaseDeDatos -right- Esquema
+Rol -- Permiso
+Esquema -- Vista
+Permiso -- Vista
+Vista -- Tabla
+Tabla -- Indice
+Indice -right- Campo
+Tabla -- Campo
+Campo -right- Constraint
+Campo -- Key
+Campo -- Tipo
+
+hide empty members
+@enduml
