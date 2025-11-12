@@ -1,0 +1,70 @@
+@startuml
+object Usuario {
+  name = "Usuario"
+}
+
+object Rol {
+  tipo = "Lector"
+}
+
+object Permiso {
+  tipo = "Leer"
+}
+
+object BaseDeDatos {
+  name = "UNEAT"
+}
+
+object Esquema {
+  name = "OrdenVista"
+}
+
+object Vista {
+  name = "VistaOrden"
+}
+
+object Tabla {
+  name = "Orden"
+}
+
+object Indice {
+}
+
+object Campo {
+  id = 1
+  name = "Registro"
+}
+
+object Constraint {
+  name = "SinArroba"
+}
+
+object PrimaryKey {
+  id = 1
+}
+
+object ForeignKey {
+  id = 3
+}
+
+object TipoDeDato {
+  int
+}
+
+Usuario -- Rol
+BaseDeDatos -right- Esquema
+Rol -- Permiso
+Esquema -- Vista
+Permiso -- Vista
+Vista -- Tabla
+Tabla -- Indice
+Indice -right- Campo
+Tabla -- Campo
+Campo -- PrimaryKey
+Campo -right- Constraint
+Constraint -[hidden]down- ForeignKey
+Campo -- ForeignKey
+Campo -- TipoDeDato
+
+hide empty members
+@enduml
